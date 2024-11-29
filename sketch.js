@@ -8,13 +8,12 @@ let selectedPoint = null;
 let points = [];
 let isDragging = false;
 let touchDelay = 0;
-
 // Theme toggle variables
 let isWhiteTheme = true;
 let themeButton;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(1024, 1014, WEBGL);
   camera(zoom, 0, 0, 0, 0, 0, 0, 1, 0);
   
   // Create theme toggle button
@@ -166,6 +165,6 @@ function mouseWheel(event) {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(1024, 1014);
   themeButton.position(20, 20);
 }
