@@ -45,7 +45,7 @@ function toggleTheme() {
   isWhiteTheme = !isWhiteTheme;
   if (isWhiteTheme) {
     themeButton.style('background-color', 'white');
-    themeButton.style('color', 'black');
+    themeButton.style('color', 'rgb(255,255,255)');
   } else {
     themeButton.style('background-color', '#0066cc');
     themeButton.style('color', 'white');
@@ -65,14 +65,14 @@ function draw() {
   
   for (let p of points) {
     if (selectedPoint && p === selectedPoint) {
-      strokeWeight(1.5);
+      strokeWeight(0.2);
     } else {
       if (isWhiteTheme) {
         stroke(255);
       } else {
         stroke(255);
       }
-      strokeWeight(0.5);
+      strokeWeight(2);
     }
     point(p.x, p.y, p.z);
   }
@@ -134,8 +134,8 @@ function touchMoved() {
     isDragging = true;
   }
   
-  let dx = (mouseX - touchStartX) * 0.02;
-  let dy = (mouseY - touchStartY) * 0.02;
+  let dx = (mouseX - touchStartX) * 0.01;
+  let dy = (mouseY - touchStartY) * 0.01;
   
   rotY += dx;
   rotX += dy;
